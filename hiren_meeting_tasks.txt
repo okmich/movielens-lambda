@@ -1,0 +1,13 @@
+Tasks
+============================
+0. Create a hive table for Movie data.
+1. Create a java simulator that will generate ratings and send to a kafka topic. Example 5000 records per sec.
+2. Creat a spark streaming application that will consume data from the kafka topic and parse the data and store in HBase
+3. Will create another version of 2 that will enrich the data will movie information. 
+4. Create spark MLlib application that will read all recommendation and apply ALS algorithm to score the data and score the scores in HBase
+5. I create a sample web service that will generate user recommendation from HBase based on the score for a given movie/user.
+6. Creat an oozie workflow that will execute spark ml job
+
+
+Github repository - https://github.com/okmich/movielens-lambda
+Dataset - 		https://github.com/okmich/movielens-lambda.git	
