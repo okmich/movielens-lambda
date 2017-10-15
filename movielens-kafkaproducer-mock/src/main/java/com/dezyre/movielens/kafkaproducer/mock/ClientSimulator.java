@@ -33,23 +33,27 @@ public class ClientSimulator {
             Logger.getLogger(ClientSimulator.class.getName()).log(Level.SEVERE, null, ex);
             throw new RuntimeException(ex.getMessage(), ex);
         }
+        //inistantiate kafka endpoint
+        this.kafkaProducerInterface = new KafkaProducerInterface(brokerUrl, topic);
     }
 
     public void start() throws IOException {
         int count = 0;
         String line = this.bufferedFileReader.readLine();
-        while (line == null) {
+        do {
             kafkaProducerInterface.send(line);
             count++;
             //flush after a certain number of send message
-            if (count == 2000) {
+            if (count == 3000) {
                 kafkaProducerInterface.flush();
                 count = 0;
             }
-        }
+            Logger.getLogger(ClientSimulator.class.getName()).log(Level.INFO, "{0}  >>> {1}", new Object[]{line, count});
+            line = this.bufferedFileReader.readLine();
+        } while (line != null);
+
         kafkaProducerInterface.flush();
         kafkaProducerInterface.close();
-
     }
 
 }

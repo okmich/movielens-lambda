@@ -1,3 +1,5 @@
+mkdir Downloads
+
 #go to downloads folder
 cd Downloads
 

@@ -1,0 +1,2 @@
+# create a test topic
+kafka-topics.sh --create --topic test --partitions 1 --replication-factor 1 --zookeeper sandbox.hortonworks.com:2181
