@@ -1,0 +1,5 @@
+# command to run the MovieRatingStreamingApp spark job
+spark-submit --class MovieRatingStreamingApp ./movielens-streaming-assembly-1.0.jar sandbox.hortonworks.com:6667 test 250 sandbox.hortonworks.com 2181
+
+# command to start the java kafka mock producer
+java -jar movielens-kafkaproducer-mock-1.0-SNAPSHOT.jar /home/raj_ops/Downloads/ml-latest/ratings.csv sandbox.hortonworks.com:6667 test

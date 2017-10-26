@@ -1,0 +1,2 @@
+-- creating an hbase table 'rating' with one column family 'main'
+create 'rating', 'main'
