@@ -1,1 +1,3 @@
 /movielens-kafkaproducer-mock/target/
+/filereader-kafkaproducer/target/
+/kafka-etl/target/

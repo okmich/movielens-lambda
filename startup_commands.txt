@@ -3,3 +3,6 @@ spark-submit --class MovieRatingStreamingApp ./movielens-streaming-assembly-1.0.
 
 # command to start the java kafka mock producer
 java -jar movielens-kafkaproducer-mock-1.0-SNAPSHOT.jar /home/raj_ops/Downloads/ml-latest/ratings.csv sandbox.hortonworks.com:6667 test
+
+# command to start the console consumer 
+kafka-console-consumer.sh --topic test --bootstrap-server sandbox.hortonworks.com:6667 --from-beginning

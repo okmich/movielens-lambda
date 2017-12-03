@@ -1,5 +1,4 @@
 
-
 import kafka.serializer.StringDecoder
 
 import org.apache.spark.SparkConf;

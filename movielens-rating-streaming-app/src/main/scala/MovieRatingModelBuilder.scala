@@ -32,7 +32,8 @@ object MovieRatingModelBuilder {
 			    .inColumnFamily("main")
 
 		// // cache the dataframe
-		// val ratingDF : DataFrame = hBaseRDD.toDF.cache
+		//val ratingDF : DataFrame = hBaseRDD.toDF.cache
+		hBaseRDD foreach println
 	}
 
 }
