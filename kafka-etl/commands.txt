@@ -1,0 +1,12 @@
+# start the kafka server
+nohup kafka-server-start.sh /opt/kafka_2.11-0.11.0.2/config/server.properties &
+
+# to run kafka file connect in standalone mode
+connect-standalone.sh kafka-connect/connect-standalone.properties kafka-connect/movie-file-source.properties
+
+# run the simulator using the kafka producer api
+java -jar filereader-kafkaproducer-1.0-SNAPSHOT.jar /home/cloudera/Downloads/ml-latest/ratings.csv quickstart.cloudera:9092 ml-ratings-in
+
+# run the kafka streaming application for rating denormalization
+java -cp ./kafka-etl-1.0-SNAPSHOT.jar com.dezyre.kafka.etl.MovieRatingStreamApp
+

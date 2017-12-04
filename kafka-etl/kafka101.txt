@@ -1,0 +1,14 @@
+-- started kafka
+kafka-server-start.sh $KAFKA_HOME/config/server.properties
+
+-- create a topic
+kafka-topics.sh --create --zookeeper quickstart.cloudera:2181 --replication-factor 1 --partitions 1 --topic sample_topic
+
+-- list topics
+kafka-topics.sh --list --zookeeper quickstart.cloudera:2181
+
+-- run a console consumer
+kafka-console-consumer.sh --bootstrap-server quickstart.cloudera:9092 --topic sample_topic
+
+-- run a console producer
+kafka-console-producer.sh --topic sample_topic --broker-list quickstart.cloudera:9092
