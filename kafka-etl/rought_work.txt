@@ -1,0 +1,38 @@
+kafka-topics.sh --list --zookeeper quickstart.cloudera:2181
+
+kafka-topics.sh --delete --zookeeper quickstart.cloudera:2181 --topic ml-rating-summary
+
+kafka-topics.sh --create --zookeeper quickstart.cloudera:2181 --topic ml-rating-summary --replication-factor 1 --partitions 1
+
+ml-denor-movie-rating
+ml-movies-in
+ml-movies-rating-in
+ml-ratings-in
+ml-rating-summary
+sample_topic
+
+
+kafka-topics.sh --list --zookeeper quickstart.cloudera:2181
+
+
+kafka-console-producer.sh --broker-list quickstart.cloudera:9092 --key-serializer org.apache.kafka.common.serialization.StringSerializer --value-serializer org.apache.kafka.common.serialization.StringSerializer --topic ml-movies-in
+
+
+kafka-console-consumer.sh --bootstrap-server quickstart.cloudera:9092 --topic ml-movies-in --value-deserializer org.apache.kafka.common.serialization.StringDeserializer --key-deserializer org.apache.kafka.common.serialization.StringDeserializer
+
+
+kafka-console-consumer.sh --bootstrap-server quickstart.cloudera:9092 --topic ml-denor-movie-rating --value-deserializer org.apache.kafka.common.serialization.StringDeserializer --key-deserializer org.apache.kafka.common.serialization.StringDeserializer
+
+
+
+
+
+
+
+
+
+
+java -jar filereader-kafkaproducer/target/filereader-kafkaproducer-1.0-SNAPSHOT.jar /home/cloudera/Downloads/ml-latest/movies.csv quickstart.cloudera:9092 ml-movies-in
+
+
+java -jar filereader-kafkaproducer/target/filereader-kafkaproducer-1.0-SNAPSHOT.jar /home/cloudera/Downloads/ml-latest/ratings.csv quickstart.cloudera:9092 ml-ratings-in

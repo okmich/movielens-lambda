@@ -13,7 +13,11 @@ import java.io.Serializable;
  */
 public class Movie implements Serializable {
 
-    private Long movieId;
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	private Long movieId;
     private String title;
     private String year;
     private String genres;

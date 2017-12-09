@@ -5,7 +5,7 @@ kafka-topics.sh --create --zookeeper quickstart.cloudera:2181 --replication-fact
 
 kafka-topics.sh --create --zookeeper quickstart.cloudera:2181 --replication-factor 1 --partitions 2 --topic ml-denor-movie-rating
 
-kafka-topics.sh --create --zookeeper quickstart.cloudera:2181 --replication-factor 1 --partitions 2 --topic ml-topn-rated-movie
+kafka-topics.sh --create --zookeeper quickstart.cloudera:2181 --replication-factor 1 --partitions 2 --topic ml-rating-summary --config cleanup.policy=compact
 
 kafka-topics.sh --create --zookeeper quickstart.cloudera:2181 --replication-factor 1 --partitions 2 --topic ml-movies-rating-in --config cleanup.policy=compact
 

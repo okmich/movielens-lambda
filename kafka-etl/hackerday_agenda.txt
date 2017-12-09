@@ -1,0 +1,51 @@
+Agenda
+======================
+
+Data warehousing
+	- Business intelligence
+	- advanced reporting (OLAP)
+	- Archiving
+
+Real-time data warehousing (Streaming)
+	1) Deliver time value of information
+	2) Agility
+	3) Business and technology enabler
+	4) End-to-end data pipelines
+	5) Integration capabilities with other tools in the big data space
+
+Kafka and real-time data warehousing
+	1) Data storage
+	2) Messaging
+	3) Microservice Hub
+	4) Replay capability
+
+Kafka Connect
+	1) Data Ingestion/Import/Source
+	2) Data egestion/Export/Sink
+
+Kafka Streams
+	1) Data processing
+
+End-to-end Kafka pipeline
+	1) Live Movie rating summary
+
+
+Demostrations
+===========================
+Movielens
+
+	Movie
+		Stream movies using kafka connect
+
+	Rating
+		Stream ratings from a simulated producer
+
+	MovieRatings
+		Join Movies and rating using Kafka Streams
+
+	TopSummaryRatings
+		Generate the Movie rating summary at every point in time
+
+	TopNGenre
+
+	ActiveUserFeed

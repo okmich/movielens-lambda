@@ -13,7 +13,11 @@ import java.io.Serializable;
  */
 public class Rating implements Serializable {
 
-    private Long userId;
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	private Long userId;
     private Long movieId;
     private Float rating;
     private Long timestamp;
